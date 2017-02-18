@@ -1,0 +1,21 @@
+{
+  "name": "mrcat29/sugar-crm-orm-api",
+  "description": "Sugar Crm ORM API CLASS",
+  "type": "package",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "freddy vargas",
+      "email": "freddy@blinsoft.com"
+    }
+  ],
+  "require": {
+    "mrcat29/sugar-crm-wrapper": "^0.0.1",
+    "mrcat29/html": "^0.0.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "MrCat\\SugarCrmOrmApi\\": "src/mrcat"
+    }
+  }
+}
