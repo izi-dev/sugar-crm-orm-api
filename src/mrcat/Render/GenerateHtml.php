@@ -119,11 +119,12 @@ class GenerateHtml
     public function radio()
     {
         $html = "";
-        foreach ($this->options['options'] as $option) {
-            $html .= "<label style='padding-right: 10px; padding-left: 10px;'> {$option} </label>" . HTML::radio(
+        foreach ($this->options['options'] as $key => $value) {
+            $html .= "<label style='padding-right: 10px; padding-left: 10px;'> {$value} </label>" .
+                HTML::radio(
                     $this->options['name'],
                     false,
-                    array_merge(['value' => $option], $this->options["attributes"])
+                    array_merge(['value' => $key], $this->options["attributes"])
                 );
         }
 
