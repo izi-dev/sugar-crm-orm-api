@@ -138,7 +138,7 @@ class GenerateHtml
         $html = "";
         foreach ($this->options['options'] as $key => $value) {
             $html .= HTML::checkbox(
-                    $this->options['name'],
+                    $this->options['name'].'[]',
                     false,
                     array_merge(['value' => $key], $this->options["attributes"])
                 ). "<span style='padding-left:5px;'>{$value}</span> <br>";
