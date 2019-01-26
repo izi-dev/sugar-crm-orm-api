@@ -84,7 +84,7 @@ class Form
      *
      * @return array
      */
-    public function generateFields($parameters = [], callable $lang)
+    public function generateFields($parameters = [])
     {
         $data = [];
 
@@ -95,7 +95,7 @@ class Form
                 'label' => $value['label'],
                 'name' => $value['name'],
                 'default' => $this->generateValuesDefaultLabel($value, $parameters['default']),
-                'option' => $this->getOptionsForm($value['options'], $lang),
+                'option' => $this->getOptionsForm($value['options']),
                 'field' => GenerateHtml::input(
                     $value['type'],
                     [
@@ -108,7 +108,7 @@ class Form
                             )
                         ),
                         'default' => $this->generateValuesDefault($value, $parameters['default']),
-                        'options' => $this->getOptionsForm($value['options'], $lang),
+                        'options' => $this->getOptionsForm($value['options']),
                     ]),
             ];
         }
@@ -212,11 +212,11 @@ class Form
      *
      * @return array
      */
-    private function getOptionsForm($options, callable $lang)
+    private function getOptionsForm($options)
     {
         $data = [];
         foreach ($options as $key => $value) {
-            $data[$value['name']] = call_user_func($lang, $value['value']);
+            $data[$value['name']] = $value['value'];
         }
         return $data;
     }
